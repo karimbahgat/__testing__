@@ -1,3 +1,7 @@
+# This repository and README is just for my own use to test various GitHub and Markdown functionality. Nothing interesting to see here here. 
+
+# MARKDOWN TESTING BELOW:
+
 # Documentation for Python Geographic Visualizer (GeoVis)
 
 A complete geographic visualization module for the Python programming language
@@ -16,6 +20,7 @@ License: Creative Commons Attribution-ShareAlike (CC BY-SA). For more details se
 Author: Karim Bahgat (karim.bahgat.norway<at>gmail.com)
 Homepage: https://github.com/karimbahgat/geovis
 Date: February 21, 2014
+
 
 ## Contents
 
@@ -54,8 +59,16 @@ Date: February 21, 2014
     
     **Arguments:**
     
-    | __option__    | __description__ | __input__
-    | symboltype | a string indicating which type of symbol the classification should apply to. | 
+    Markdown | Less | Pretty
+    --- | --- | ---
+    *Still* | `renders` | **nicely**
+    1 | 2 | 3
+
+    __option__    | __description__ | __input__
+    --- | --- | ---
+    symboltype | a string indicating which type of symbol the classification should apply to. | - list
+    - within
+    - table
     
     Valid symboltypes are:
     
@@ -251,9 +264,9 @@ Date: February 21, 2014
     
     **Arguments:**
     
-    | __option__    | __description__
-    | query | a string containing Python-like syntax (required). Feature values for fieldnames can be grabbed by specifying the fieldname as if it were a variable (case-sensitive). Note that evaluating string expressions is currently case-sensitive, which becomes particularly unintuitive for less-than/more-than alphabetic queries.
-    | inverted | a boolean specifying whether to invert the selection (default is False).
+    __option__    | __description__
+    query | a string containing Python-like syntax (required). Feature values for fieldnames can be grabbed by specifying the fieldname as if it were a variable (case-sensitive). Note that evaluating string expressions is currently case-sensitive, which becomes particularly unintuitive for less-than/more-than alphabetic queries.
+    inverted | a boolean specifying whether to invert the selection (default is False).
     
 
 ### geovis.ShapefileFolder(...):
