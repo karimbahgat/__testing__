@@ -74,8 +74,29 @@ This classifier is also needed to render a shapefile's legend.
     | | | "equal interval" | classes are calculated so that each class only contains features that fall within a value range that is equally large for all classes
     | | | "natural breaks" | the Fisher-Jenks natural breaks algorithm, adapted from the Python implementation by Daniel J. Lewis (http://danieljlewis.org/files/2010/06/Jenks.pdf), is used to find 'natural' breaks in the shapefile dataset, i.e. where the value range within each class is as similar as possible and where the classes are as different as possible from each other. This algorithm is notorious for being slow for large datasets, so for datasets larger than 1000 records the calculation will be limited to a random sample of 1000 records (thanks to Carston Farmer for that idea, see: http://www.carsonfarmer.com/2010/09/adding-a-bit-of-classification-to-qgis/), and in addition that calculation will be performed 6 times, with the final break points being the sample mean of all the calculations. For large datasets this means that the natural breaks algorithm and the resultant map classification may turn out differently each time; however, the results should be somewhat consistent especially due to the random nature of the approach and the multiple sample means.
     | nrclasses | an integer or float for how many classes to subdivide the data and symbol values into. | Integer or float
+
     
+    VS as a list
     
+    > - __symboltype__:  
+    >   a string indicating which type of symbol the classification should apply to. 
+    >   - _"fillsize"_   
+    >     the size of a circle, square, pyramid, or the thickness of a line
+    >   - _"fillwidth"_   
+    >     currently only used for the width of a pyramid when using the pyramid symbolizer
+    >   - _"fillheight"_   
+    >     currently has no use
+    >   - _"fillcolor"_  
+    >     hex color to fill the shape
+    >   - _"outlinewidth"_   
+    >     the width of the outline if any
+    >   - _"outlinecolor"_   
+    >     hex color to use for outline of shape
+    > - __valuefield__   
+    >   a string with the name of a shapefile attribute field whose values will be used to inform the classification.
+    > - __symbolrange__   
+    >   a list or tuple of the range of symbol values that should be used for the symbol type being classified. You only need to assign the edge/breakpoints in an imaginary gradient of symbol values representing the transition from low to high value classes; the values in between will be interpolated if needed. The symbol values must be floats or integers when classifying a size-based symbol type, or hex color strings when classifying a color-based symbol type.
+      
 
   - #### .AddCustomClass(...):
     - no documentation for this method
