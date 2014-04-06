@@ -26,7 +26,7 @@ geovis.COLORSTYLES:
   dict(**kwargs) -> new dictionary initialized with the name=value pairs
       in the keyword argument list.  For example:  dict(one=1, two=2)
 
-geovis.Classifier:
+## geovis.Classifier:
   
   A classifier that holds a set of instructions on how to classify a shapefile's visual symbols based on its attribute values. 
   The classifier can hold multiple classifications, one for each symbol (e.g. fillsize and fillcolor), and these are added with the AddClassification method. 
@@ -34,11 +34,11 @@ geovis.Classifier:
   This classifier is also needed to render a shapefile's legend. 
   
 
-  - .AddClassification:
+  - ### .AddClassification:
     
     Adds a classification/instruction to the classifier on how to symbolize a particular symbol part (e.g. fillcolor) based on a shapefile's attribute values.
     
-    - symboltype:
+    - #### symboltype:
     a string indicating which type of symbol the classification should apply to. Valid symbol types are: 
     
       - "fillsize"
@@ -57,7 +57,7 @@ geovis.Classifier:
     
       - "outlinecolor"
     
-    - valuefield:
+    - *valuefield:*
     a string with the name of a shapefile attribute field whose values will be used to inform the classification. 
     
     - symbolrange:
