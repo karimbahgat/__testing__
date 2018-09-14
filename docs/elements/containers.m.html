@@ -3,8 +3,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
-    <title>pycrs API documentation</title>
-    <meta name="description" content="# **API Documentation**" />
+    <title>pycrs.elements.containers API documentation</title>
+    <meta name="description" content="" />
 
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
   
@@ -971,15 +971,85 @@ table {
     <ul id="index">
 
 
-
-    <li class="set"><h3><a href="#header-submodules">Sub-modules</a></h3>
+    <li class="set"><h3><a href="#header-classes">Classes</a></h3>
       <ul>
-        <li class="mono"><a href="elements/index.html">pycrs.elements</a></li>
-        <li class="mono"><a href="loader.m.html">pycrs.loader</a></li>
-        <li class="mono"><a href="parser.m.html">pycrs.parser</a></li>
-        <li class="mono"><a href="utils.m.html">pycrs.utils</a></li>
+        <li class="mono">
+        <span class="class_name"><a href="#pycrs.elements.containers.CRS">CRS</a></span>
+        
+          
+  <ul>
+    <li class="mono"><a href="#pycrs.elements.containers.CRS.__init__">__init__</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.CRS.to_esri_wkt">to_esri_wkt</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.CRS.to_ogc_wkt">to_ogc_wkt</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.CRS.to_proj4">to_proj4</a></li>
+  </ul>
+
+        </li>
+        <li class="mono">
+        <span class="class_name"><a href="#pycrs.elements.containers.Datum">Datum</a></span>
+        
+          
+  <ul>
+    <li class="mono"><a href="#pycrs.elements.containers.Datum.__init__">__init__</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.Datum.to_esri_wkt">to_esri_wkt</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.Datum.to_geotiff">to_geotiff</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.Datum.to_ogc_wkt">to_ogc_wkt</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.Datum.to_proj4">to_proj4</a></li>
+  </ul>
+
+        </li>
+        <li class="mono">
+        <span class="class_name"><a href="#pycrs.elements.containers.Ellipsoid">Ellipsoid</a></span>
+        
+          
+  <ul>
+    <li class="mono"><a href="#pycrs.elements.containers.Ellipsoid.__init__">__init__</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.Ellipsoid.to_esri_wkt">to_esri_wkt</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.Ellipsoid.to_geotiff">to_geotiff</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.Ellipsoid.to_ogc_wkt">to_ogc_wkt</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.Ellipsoid.to_proj4">to_proj4</a></li>
+  </ul>
+
+        </li>
+        <li class="mono">
+        <span class="class_name"><a href="#pycrs.elements.containers.GeogCS">GeogCS</a></span>
+        
+          
+  <ul>
+    <li class="mono"><a href="#pycrs.elements.containers.GeogCS.__init__">__init__</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.GeogCS.to_esri_wkt">to_esri_wkt</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.GeogCS.to_ogc_wkt">to_ogc_wkt</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.GeogCS.to_proj4">to_proj4</a></li>
+  </ul>
+
+        </li>
+        <li class="mono">
+        <span class="class_name"><a href="#pycrs.elements.containers.ProjCS">ProjCS</a></span>
+        
+          
+  <ul>
+    <li class="mono"><a href="#pycrs.elements.containers.ProjCS.__init__">__init__</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.ProjCS.to_esri_wkt">to_esri_wkt</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.ProjCS.to_ogc_wkt">to_ogc_wkt</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.ProjCS.to_proj4">to_proj4</a></li>
+  </ul>
+
+        </li>
+        <li class="mono">
+        <span class="class_name"><a href="#pycrs.elements.containers.Projection">Projection</a></span>
+        
+          
+  <ul>
+    <li class="mono"><a href="#pycrs.elements.containers.Projection.__init__">__init__</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.Projection.to_esri_wkt">to_esri_wkt</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.Projection.to_ogc_wkt">to_ogc_wkt</a></li>
+    <li class="mono"><a href="#pycrs.elements.containers.Projection.to_proj4">to_proj4</a></li>
+  </ul>
+
+        </li>
       </ul>
     </li>
+
     </ul>
   </div>
 
@@ -991,8 +1061,8 @@ table {
 
 
   <header id="section-intro">
-  <h1 class="title"><span class="name">pycrs</span> module</h1>
-  <h1><strong>API Documentation</strong></h1>
+  <h1 class="title"><span class="name">pycrs.elements.containers</span> module</h1>
+  
   
 
   </header>
@@ -1000,36 +1070,526 @@ table {
   <section id="section-items">
 
 
-
-    <h2 class="section-title" id="header-submodules">Sub-modules</h2>
+    <h2 class="section-title" id="header-classes">Classes</h2>
+      
       <div class="item">
-      <p class="name"><a href="elements/index.html">pycrs.elements</a></p>
+      <p id="pycrs.elements.containers.CRS" class="name">class <span class="ident">CRS</span></p>
       
   
-    <div class="desc"><p>Access to the various construct and parameter classes needed to build a CRS object.</p></div>
+  <div class="source_cont">
+</div>
 
+
+      <div class="class">
+          <h3>Ancestors (in MRO)</h3>
+          <ul class="class_list">
+          <li><a href="#pycrs.elements.containers.CRS">CRS</a></li>
+          </ul>
+          <h3>Methods</h3>
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.CRS.__init__">
+    <p>def <span class="ident">__init__</span>(</p><p>self, toplevel)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>The main CRS class that defines a coordinate reference system and provides access
+to all the sub-containers, sub-elements, parameters,
+and values of the reference system in a nested structure.</p>
+<p>Args:</p>
+<ul>
+<li><strong>toplevel</strong>: The type of reference system. Can be either a projected (arbitrary coordinates)
+                or geographic (latitude-longitude coordinates) reference system.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.CRS.to_esri_wkt">
+    <p>def <span class="ident">to_esri_wkt</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.CRS.to_ogc_wkt">
+    <p>def <span class="ident">to_ogc_wkt</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.CRS.to_proj4">
+    <p>def <span class="ident">to_proj4</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
       </div>
+      </div>
+      
       <div class="item">
-      <p class="name"><a href="loader.m.html">pycrs.loader</a></p>
+      <p id="pycrs.elements.containers.Datum" class="name">class <span class="ident">Datum</span></p>
       
   
-    <div class="desc"><p>Convenience functions for loading from different sources.</p></div>
+  <div class="source_cont">
+</div>
 
+
+      <div class="class">
+          <h3>Ancestors (in MRO)</h3>
+          <ul class="class_list">
+          <li><a href="#pycrs.elements.containers.Datum">Datum</a></li>
+          </ul>
+          <h3>Methods</h3>
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.Datum.__init__">
+    <p>def <span class="ident">__init__</span>(</p><p>self, name, ellipsoid, datumshift=None)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>A Datum defines the shape of the earth. </p>
+<p>Arguments:</p>
+<ul>
+<li><strong>name</strong>: One of the classes defined in pycrs.elements.datums. </li>
+<li><strong>ellipsoid</strong>: A pycrs.elements.containers.Ellipsoid instance.</li>
+<li><strong>datumshift</strong> (optional): A pycrs.elements.parameters.DatumShift instance.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.Datum.to_esri_wkt">
+    <p>def <span class="ident">to_esri_wkt</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.Datum.to_geotiff">
+    <p>def <span class="ident">to_geotiff</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.Datum.to_ogc_wkt">
+    <p>def <span class="ident">to_ogc_wkt</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.Datum.to_proj4">
+    <p>def <span class="ident">to_proj4</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
       </div>
+      </div>
+      
       <div class="item">
-      <p class="name"><a href="parser.m.html">pycrs.parser</a></p>
+      <p id="pycrs.elements.containers.Ellipsoid" class="name">class <span class="ident">Ellipsoid</span></p>
       
   
-    <div class="desc"><p>The main module containing functions for parsing text strings into crs objects.</p></div>
+  <div class="source_cont">
+</div>
 
+
+      <div class="class">
+          <h3>Ancestors (in MRO)</h3>
+          <ul class="class_list">
+          <li><a href="#pycrs.elements.containers.Ellipsoid">Ellipsoid</a></li>
+          </ul>
+          <h3>Methods</h3>
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.Ellipsoid.__init__">
+    <p>def <span class="ident">__init__</span>(</p><p>self, name, semimaj_ax=None, inv_flat=None)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>The ellipsoid that defines the shape of the earth. </p>
+<p>Arguments:</p>
+<ul>
+<li><strong>name</strong>: One of the classes defined in pycrs.elements.ellipsoids. </li>
+<li><strong>semimaj_ax</strong>: A float representing the coordinate position of the semimajor axis.</li>
+<li><strong>inv_flat</strong>: A float representing the inverse flattening factor.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.Ellipsoid.to_esri_wkt">
+    <p>def <span class="ident">to_esri_wkt</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.Ellipsoid.to_geotiff">
+    <p>def <span class="ident">to_geotiff</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.Ellipsoid.to_ogc_wkt">
+    <p>def <span class="ident">to_ogc_wkt</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.Ellipsoid.to_proj4">
+    <p>def <span class="ident">to_proj4</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
       </div>
+      </div>
+      
       <div class="item">
-      <p class="name"><a href="utils.m.html">pycrs.utils</a></p>
+      <p id="pycrs.elements.containers.GeogCS" class="name">class <span class="ident">GeogCS</span></p>
       
   
-    <div class="desc"><p>Misc utility functions related to crs formats and online services.</p></div>
+  <div class="source_cont">
+</div>
 
+
+      <div class="class">
+          <h3>Ancestors (in MRO)</h3>
+          <ul class="class_list">
+          <li><a href="#pycrs.elements.containers.GeogCS">GeogCS</a></li>
+          </ul>
+          <h3>Methods</h3>
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.GeogCS.__init__">
+    <p>def <span class="ident">__init__</span>(</p><p>self, name, datum, prime_mer, angunit, twin_ax=None)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>A geographic coordinate system where the coordinates are in the latitude-longitude space. </p>
+<p>Arguments:</p>
+<ul>
+<li><strong>name</strong>: An arbitrary name given to this geographic coordinate system, to represent its unique
+            configuration of datum, prime meridian, angular unit, and twin axes. The actual name
+            is just for human readability, and does not actually have any implication. </li>
+<li><strong>datum</strong>: A pycrs.elements.container.Datum instance, representing the shape of the earth.</li>
+<li><strong>prime_mer</strong>: A pycrs.elements.parameters.PrimeMeridian instance, representing the prime meridian
+            coordinate where the longitude is considered to be 0.</li>
+<li><strong>angunit</strong>: A pycrs.elements.parameters.AngularUnit instance, representing the angular unit in which
+            coordinates are measured.</li>
+<li><strong>twin_ax</strong>: A pair of pycrs.elements.directions.North/South/East/West instances, one for each axis,
+            representing the compass direction in which each axis increases. Defaults to East and North.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.GeogCS.to_esri_wkt">
+    <p>def <span class="ident">to_esri_wkt</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.GeogCS.to_ogc_wkt">
+    <p>def <span class="ident">to_ogc_wkt</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.GeogCS.to_proj4">
+    <p>def <span class="ident">to_proj4</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
       </div>
+      </div>
+      
+      <div class="item">
+      <p id="pycrs.elements.containers.ProjCS" class="name">class <span class="ident">ProjCS</span></p>
+      
+  
+  <div class="source_cont">
+</div>
+
+
+      <div class="class">
+          <h3>Ancestors (in MRO)</h3>
+          <ul class="class_list">
+          <li><a href="#pycrs.elements.containers.ProjCS">ProjCS</a></li>
+          </ul>
+          <h3>Methods</h3>
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.ProjCS.__init__">
+    <p>def <span class="ident">__init__</span>(</p><p>self, name, geogcs, proj, params, unit, twin_ax=None)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>Arguments:</p>
+<ul>
+<li><strong>name</strong>: Arbitrary name of the projected coordinate system.</li>
+<li><strong>geogcs</strong>: A pycrs.elements.containers.GeogCS instance.</li>
+<li><strong>proj</strong>: A pycrs.elements.containers.Projection instance.</li>
+<li><strong>params</strong>: A list of custom parameters from the pycrs.elements.parameters module.</li>
+<li><strong>unit</strong>: A pycrs.elements.parameters.Unit instance, representing the angular unit in which
+            coordinates are measured.</li>
+<li><strong>twin_ax</strong>: A pair of pycrs.elements.directions.North/South/East/West instances, one for each axis,
+            representing the compass direction in which each axis increases. Defaults to East and North.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.ProjCS.to_esri_wkt">
+    <p>def <span class="ident">to_esri_wkt</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.ProjCS.to_ogc_wkt">
+    <p>def <span class="ident">to_ogc_wkt</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.ProjCS.to_proj4">
+    <p>def <span class="ident">to_proj4</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+      </div>
+      </div>
+      
+      <div class="item">
+      <p id="pycrs.elements.containers.Projection" class="name">class <span class="ident">Projection</span></p>
+      
+  
+  <div class="source_cont">
+</div>
+
+
+      <div class="class">
+          <h3>Ancestors (in MRO)</h3>
+          <ul class="class_list">
+          <li><a href="#pycrs.elements.containers.Projection">Projection</a></li>
+          </ul>
+          <h3>Methods</h3>
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.Projection.__init__">
+    <p>def <span class="ident">__init__</span>(</p><p>self, value)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>A generic container for the specific projection used.</p>
+<p>Args:</p>
+<ul>
+<li><strong>value</strong>: One of the classes defined in pycrs.elements.projections.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.Projection.to_esri_wkt">
+    <p>def <span class="ident">to_esri_wkt</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.Projection.to_ogc_wkt">
+    <p>def <span class="ident">to_ogc_wkt</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="pycrs.elements.containers.Projection.to_proj4">
+    <p>def <span class="ident">to_proj4</span>(</p><p>self)</p>
+    </div>
+    
+
+    
+  
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+      </div>
+      </div>
+
   </section>
 
     </article>

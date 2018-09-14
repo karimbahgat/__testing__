@@ -3,8 +3,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
-    <title>pycrs API documentation</title>
-    <meta name="description" content="# **API Documentation**" />
+    <title>pycrs.parser API documentation</title>
+    <meta name="description" content="The main module containing functions for parsing text strings into crs objects." />
 
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
   
@@ -970,16 +970,22 @@ table {
     <h1>Index</h1>
     <ul id="index">
 
+    <li class="set"><h3><a href="#header-functions">Functions</a></h3>
+      
+  <ul>
+    <li class="mono"><a href="#pycrs.parser.from_epsg_code">from_epsg_code</a></li>
+    <li class="mono"><a href="#pycrs.parser.from_esri_code">from_esri_code</a></li>
+    <li class="mono"><a href="#pycrs.parser.from_esri_wkt">from_esri_wkt</a></li>
+    <li class="mono"><a href="#pycrs.parser.from_ogc_wkt">from_ogc_wkt</a></li>
+    <li class="mono"><a href="#pycrs.parser.from_proj4">from_proj4</a></li>
+    <li class="mono"><a href="#pycrs.parser.from_sr_code">from_sr_code</a></li>
+    <li class="mono"><a href="#pycrs.parser.from_unknown_text">from_unknown_text</a></li>
+    <li class="mono"><a href="#pycrs.parser.from_unknown_wkt">from_unknown_wkt</a></li>
+  </ul>
 
-
-    <li class="set"><h3><a href="#header-submodules">Sub-modules</a></h3>
-      <ul>
-        <li class="mono"><a href="elements/index.html">pycrs.elements</a></li>
-        <li class="mono"><a href="loader.m.html">pycrs.loader</a></li>
-        <li class="mono"><a href="parser.m.html">pycrs.parser</a></li>
-        <li class="mono"><a href="utils.m.html">pycrs.utils</a></li>
-      </ul>
     </li>
+
+
     </ul>
   </div>
 
@@ -991,45 +997,212 @@ table {
 
 
   <header id="section-intro">
-  <h1 class="title"><span class="name">pycrs</span> module</h1>
-  <h1><strong>API Documentation</strong></h1>
+  <h1 class="title"><span class="name">pycrs.parser</span> module</h1>
+  <p>The main module containing functions for parsing text strings into crs objects.</p>
   
 
   </header>
 
   <section id="section-items">
 
-
-
-    <h2 class="section-title" id="header-submodules">Sub-modules</h2>
-      <div class="item">
-      <p class="name"><a href="elements/index.html">pycrs.elements</a></p>
+    <h2 class="section-title" id="header-functions">Functions</h2>
       
-  
-    <div class="desc"><p>Access to the various construct and parameter classes needed to build a CRS object.</p></div>
+  <div class="item">
+    <div class="name def" id="pycrs.parser.from_epsg_code">
+    <p>def <span class="ident">from_epsg_code</span>(</p><p>code)</p>
+    </div>
+    
 
-      </div>
-      <div class="item">
-      <p class="name"><a href="loader.m.html">pycrs.loader</a></p>
+    
+  
+    <div class="desc"><p>Load crs object from epsg code, via spatialreference.org.
+Parses based on the proj4 representation.</p>
+<p>Arguments:</p>
+<ul>
+<li><em>code</em>: The EPSG code as an integer.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>CRS object.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
       
-  
-    <div class="desc"><p>Convenience functions for loading from different sources.</p></div>
+  <div class="item">
+    <div class="name def" id="pycrs.parser.from_esri_code">
+    <p>def <span class="ident">from_esri_code</span>(</p><p>code)</p>
+    </div>
+    
 
-      </div>
-      <div class="item">
-      <p class="name"><a href="parser.m.html">pycrs.parser</a></p>
+    
+  
+    <div class="desc"><p>Load crs object from esri code, via spatialreference.org.
+Parses based on the proj4 representation.</p>
+<p>Arguments:</p>
+<ul>
+<li><em>code</em>: The ESRI code as an integer.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>CRS object.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
       
-  
-    <div class="desc"><p>The main module containing functions for parsing text strings into crs objects.</p></div>
+  <div class="item">
+    <div class="name def" id="pycrs.parser.from_esri_wkt">
+    <p>def <span class="ident">from_esri_wkt</span>(</p><p>string, strict=False)</p>
+    </div>
+    
 
-      </div>
-      <div class="item">
-      <p class="name"><a href="utils.m.html">pycrs.utils</a></p>
+    
+  
+    <div class="desc"><p>Parse crs as esri wkt formatted string and return the resulting crs object.</p>
+<p>Arguments:</p>
+<ul>
+<li><em>string</em>: The ESRI WKT representation as a string.</li>
+<li><em>strict</em> (optional): When True, the parser is strict about names having to match
+    exactly with upper and lowercases. Default is not strict (False).</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>CRS object.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
       
-  
-    <div class="desc"><p>Misc utility functions related to crs formats and online services.</p></div>
+  <div class="item">
+    <div class="name def" id="pycrs.parser.from_ogc_wkt">
+    <p>def <span class="ident">from_ogc_wkt</span>(</p><p>string, strict=False)</p>
+    </div>
+    
 
-      </div>
+    
+  
+    <div class="desc"><p>Parse crs as ogc wkt formatted string and return the resulting crs object.</p>
+<p>Arguments:</p>
+<ul>
+<li><em>string</em>: The OGC WKT representation as a string.</li>
+<li><em>strict</em> (optional): When True, the parser is strict about names having to match
+    exactly with upper and lowercases. Default is not strict (False).</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>CRS object.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+      
+  <div class="item">
+    <div class="name def" id="pycrs.parser.from_proj4">
+    <p>def <span class="ident">from_proj4</span>(</p><p>string, strict=False)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>Parse crs as proj4 formatted string and return the resulting crs object.</p>
+<p>Arguments:</p>
+<ul>
+<li><em>string</em>: The proj4 representation as a string.</li>
+<li><em>strict</em> (optional): When True, the parser is strict about names having to match
+    exactly with upper and lowercases. Default is not strict (False).</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>CRS object.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+      
+  <div class="item">
+    <div class="name def" id="pycrs.parser.from_sr_code">
+    <p>def <span class="ident">from_sr_code</span>(</p><p>code)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>Load crs object from sr-org code, via spatialreference.org.
+Parses based on the proj4 representation.</p>
+<p>Arguments:</p>
+<ul>
+<li><em>code</em>: The SR-ORG code as an integer.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>CRS object.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+      
+  <div class="item">
+    <div class="name def" id="pycrs.parser.from_unknown_text">
+    <p>def <span class="ident">from_unknown_text</span>(</p><p>text, strict=False)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>Detect crs string format and parse into crs object with appropriate function.</p>
+<p>Arguments:</p>
+<ul>
+<li><em>text</em>: The crs text representation of unknown type. </li>
+<li><em>strict</em> (optional): When True, the parser is strict about names having to match
+    exactly with upper and lowercases. Default is not strict (False).</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>CRS object.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+      
+  <div class="item">
+    <div class="name def" id="pycrs.parser.from_unknown_wkt">
+    <p>def <span class="ident">from_unknown_wkt</span>(</p><p>string, strict=False)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>Given an unknown wkt string, detect if uses ogc or esri flavor, and parse the crs accordingly.</p>
+<p>Arguments:</p>
+<ul>
+<li><em>string</em>: The unknown WKT representation as a string.</li>
+<li><em>strict</em> (optional): When True, the parser is strict about names having to match
+    exactly with upper and lowercases. Default is not strict (False).</li>
+</ul>
+<p>Returns:
+- CRS object.</p></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+
+
   </section>
 
     </article>

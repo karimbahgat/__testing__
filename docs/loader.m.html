@@ -3,8 +3,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
-    <title>pycrs API documentation</title>
-    <meta name="description" content="# **API Documentation**" />
+    <title>pycrs.loader API documentation</title>
+    <meta name="description" content="Convenience functions for loading from different sources." />
 
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
   
@@ -970,16 +970,16 @@ table {
     <h1>Index</h1>
     <ul id="index">
 
+    <li class="set"><h3><a href="#header-functions">Functions</a></h3>
+      
+  <ul>
+    <li class="mono"><a href="#pycrs.loader.from_file">from_file</a></li>
+    <li class="mono"><a href="#pycrs.loader.from_url">from_url</a></li>
+  </ul>
 
-
-    <li class="set"><h3><a href="#header-submodules">Sub-modules</a></h3>
-      <ul>
-        <li class="mono"><a href="elements/index.html">pycrs.elements</a></li>
-        <li class="mono"><a href="loader.m.html">pycrs.loader</a></li>
-        <li class="mono"><a href="parser.m.html">pycrs.parser</a></li>
-        <li class="mono"><a href="utils.m.html">pycrs.utils</a></li>
-      </ul>
     </li>
+
+
     </ul>
   </div>
 
@@ -991,45 +991,61 @@ table {
 
 
   <header id="section-intro">
-  <h1 class="title"><span class="name">pycrs</span> module</h1>
-  <h1><strong>API Documentation</strong></h1>
+  <h1 class="title"><span class="name">pycrs.loader</span> module</h1>
+  <p>Convenience functions for loading from different sources.</p>
   
 
   </header>
 
   <section id="section-items">
 
-
-
-    <h2 class="section-title" id="header-submodules">Sub-modules</h2>
-      <div class="item">
-      <p class="name"><a href="elements/index.html">pycrs.elements</a></p>
+    <h2 class="section-title" id="header-functions">Functions</h2>
       
-  
-    <div class="desc"><p>Access to the various construct and parameter classes needed to build a CRS object.</p></div>
+  <div class="item">
+    <div class="name def" id="pycrs.loader.from_file">
+    <p>def <span class="ident">from_file</span>(</p><p>filepath)</p>
+    </div>
+    
 
-      </div>
-      <div class="item">
-      <p class="name"><a href="loader.m.html">pycrs.loader</a></p>
+    
+  
+    <div class="desc"><p>Returns the crs object from a file, with the format determined from the filename extension.</p>
+<p>Arguments:</p>
+<ul>
+<li><em>filepath</em>: filepath to be loaded, including extension.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
       
-  
-    <div class="desc"><p>Convenience functions for loading from different sources.</p></div>
+  <div class="item">
+    <div class="name def" id="pycrs.loader.from_url">
+    <p>def <span class="ident">from_url</span>(</p><p>url, format=None)</p>
+    </div>
+    
 
-      </div>
-      <div class="item">
-      <p class="name"><a href="parser.m.html">pycrs.parser</a></p>
-      
+    
   
-    <div class="desc"><p>The main module containing functions for parsing text strings into crs objects.</p></div>
+    <div class="desc"><p>Returns the crs object from a string interpreted as a specified format, located at a given url site.</p>
+<p>Arguments:</p>
+<ul>
+<li><em>url</em>: The url where the crs string is to be read from. </li>
+<li><em>format</em> (optional): Which format to parse the crs string as. One of "ogc wkt", "esri wkt", or "proj4".
+    If None, tries to autodetect the format for you (default).</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>CRS object.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
 
-      </div>
-      <div class="item">
-      <p class="name"><a href="utils.m.html">pycrs.utils</a></p>
-      
+  </div>
   
-    <div class="desc"><p>Misc utility functions related to crs formats and online services.</p></div>
 
-      </div>
+
   </section>
 
     </article>

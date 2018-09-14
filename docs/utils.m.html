@@ -3,8 +3,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
-    <title>pycrs API documentation</title>
-    <meta name="description" content="# **API Documentation**" />
+    <title>pycrs.utils API documentation</title>
+    <meta name="description" content="Misc utility functions related to crs formats and online services." />
 
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
   
@@ -970,16 +970,16 @@ table {
     <h1>Index</h1>
     <ul id="index">
 
+    <li class="set"><h3><a href="#header-functions">Functions</a></h3>
+      
+  <ul>
+    <li class="mono"><a href="#pycrs.utils.build_crs_table">build_crs_table</a></li>
+    <li class="mono"><a href="#pycrs.utils.crscode_to_string">crscode_to_string</a></li>
+  </ul>
 
-
-    <li class="set"><h3><a href="#header-submodules">Sub-modules</a></h3>
-      <ul>
-        <li class="mono"><a href="elements/index.html">pycrs.elements</a></li>
-        <li class="mono"><a href="loader.m.html">pycrs.loader</a></li>
-        <li class="mono"><a href="parser.m.html">pycrs.parser</a></li>
-        <li class="mono"><a href="utils.m.html">pycrs.utils</a></li>
-      </ul>
     </li>
+
+
     </ul>
   </div>
 
@@ -991,45 +991,63 @@ table {
 
 
   <header id="section-intro">
-  <h1 class="title"><span class="name">pycrs</span> module</h1>
-  <h1><strong>API Documentation</strong></h1>
+  <h1 class="title"><span class="name">pycrs.utils</span> module</h1>
+  <p>Misc utility functions related to crs formats and online services.</p>
   
 
   </header>
 
   <section id="section-items">
 
-
-
-    <h2 class="section-title" id="header-submodules">Sub-modules</h2>
-      <div class="item">
-      <p class="name"><a href="elements/index.html">pycrs.elements</a></p>
+    <h2 class="section-title" id="header-functions">Functions</h2>
       
-  
-    <div class="desc"><p>Access to the various construct and parameter classes needed to build a CRS object.</p></div>
+  <div class="item">
+    <div class="name def" id="pycrs.utils.build_crs_table">
+    <p>def <span class="ident">build_crs_table</span>(</p><p>savepath)</p>
+    </div>
+    
 
-      </div>
-      <div class="item">
-      <p class="name"><a href="loader.m.html">pycrs.loader</a></p>
+    
+  
+    <div class="desc"><p>Build crs table of all equivalent format variations by scraping spatialreference.org.
+Saves table as tab-delimited text file.
+NOTE: Might take a while.</p>
+<p>Arguments:</p>
+<ul>
+<li><em>savepath</em>: The absolute or relative filepath to which to save the crs table, including the ".txt" extension.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
       
-  
-    <div class="desc"><p>Convenience functions for loading from different sources.</p></div>
+  <div class="item">
+    <div class="name def" id="pycrs.utils.crscode_to_string">
+    <p>def <span class="ident">crscode_to_string</span>(</p><p>codetype, code, format)</p>
+    </div>
+    
 
-      </div>
-      <div class="item">
-      <p class="name"><a href="parser.m.html">pycrs.parser</a></p>
-      
+    
   
-    <div class="desc"><p>The main module containing functions for parsing text strings into crs objects.</p></div>
+    <div class="desc"><p>Lookup crscode on spatialreference.org and return in specified format.</p>
+<p>Arguments:</p>
+<ul>
+<li><em>codetype</em>: "epsg", "esri", or "sr-org".</li>
+<li><em>code</em>: The code.</li>
+<li><em>format</em>: The crs format of the returned string. One of "ogcwkt", "esriwkt", or "proj4", but also several others...</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>Crs string in the specified format.</li>
+</ul></div>
+  <div class="source_cont">
+</div>
 
-      </div>
-      <div class="item">
-      <p class="name"><a href="utils.m.html">pycrs.utils</a></p>
-      
+  </div>
   
-    <div class="desc"><p>Misc utility functions related to crs formats and online services.</p></div>
 
-      </div>
+
   </section>
 
     </article>
